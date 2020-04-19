@@ -1,0 +1,109 @@
+  <div class="newBody">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="col-lg-3">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">ASP<small>.NET A Student's Perspective</small></a>
+        </div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-2"><select class="form form-control" id="plan" name="plan"></select></div>
+        <div class="col-lg-1">
+            <a class="btn btn-primary btn-block d-none d-md-block" href="http://judah.cedarville.edu/~loula/Project4/logout.php">Logout</a>
+        </div>
+        <div class="col-lg-1">
+            <a class="btn btn-primary btn-block d-none d-md-block" href="#">Options</a>
+        </div>
+        <div class="col-lg-1">
+            <a class="btn btn-primary btn-block d-none d-md-block" href="#">Save</a>
+        </div>
+    </nav>
+    <section id="full-height" class="text-white">
+        <div class="row">
+            <div class="col-lg-2 mx-auto">
+                <a class="btn btn-primary btn-block d-md-none" href="http://judah.cedarville.edu/~loula/cs3220.html">Logout</a>
+                <a class="btn btn-primary btn-block d-md-none" href="#">Options</a>
+                <a class="btn btn-primary btn-block d-md-none" href="#">Save</a>
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Cognates
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body scroll">
+                                <ul id="cognates"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Core
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body scroll">
+                                <ul id="core"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Electives
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body scroll">
+                                <ul id="electives"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 mx-auto">
+                <div id="academicPlan"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 mx-auto">
+                <table>
+                    <tr>
+                        <td width="125px"><strong>Student:</strong> <span id="studentName"></span></td>
+                        <td><strong>Major:</strong> <span id="studentMajor"></span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Catalog:</strong> <span id="studentCatalog"></span></td>
+                        <td><strong>Total Hours Planned:</strong> <span id="totalHours"></span></td>
+                    </tr>
+                </table>
+            <br />
+                <img src="http://catplanet.org/wp-content/uploads/2014/05/Creativity.jpg" width="300px" height="auto"/></div>
+            <div class="col-lg-10 mx-auto">
+                <div class="row controls">
+                    <div class="col-md-2"><input class="btn btn-primary btn-block" type="button" value="Add Year" onclick="addYear()" /></div>
+                    <div class="col-md-2"><input class="btn btn-danger btn-block" type="button" value="Remove Year" onclick="removeYear()" /></div>
+                    <div class="col-md-8"></div>
+                </div>
+                <table class="table table-striped table-dark" id="catalogTable">
+                    <thead>
+                        <tr>
+                            <th id="classID">Id</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Credits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+  </div>

@@ -1,0 +1,237 @@
+// Place all the styles related to the Plans controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px !important;
+    padding-bottom: 20px !important;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px !important;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px !important;
+    }
+
+    .body-content {
+        padding: 0 !important;
+    }
+}
+
+section {
+    padding: 0px !important;
+    font-size: 12px !important;
+}
+
+footer {
+    background-color: #1e1f26 !important;
+}
+
+nav {
+    background-color: #1e1f26 !important;
+}
+
+header {
+    background-color: #727787 !important;
+}
+
+html, body, .newBody {
+    background-color: #0d1217 !important;
+}
+
+#full-height {
+    padding-top: 15px !important;
+}
+
+.student-details {
+    color: #FFF !important;
+    font-size: 12px !important;
+}
+
+.semester {
+    margin: 5px !important;
+    padding: 10px !important;
+    color: white !important;
+    background-color: #324664 !important;
+    min-height: 50px !important;
+    transition: transform .2s !important; /* Animation */
+    line-height: 1.45 !important;
+}
+
+.semester:hover {
+    transform: scale(1.05) !important;
+    /*border: 2px solid grey !important;*/
+    padding: 8px !important;
+}
+
+.courses {
+    margin-top: 5px !important;
+    padding-top: 5px !important;
+    border-top: 1px solid white !important;
+}
+
+    .courses table {
+        width: 100% !important;
+    }
+
+.course-designator {
+    width: 80px !important;
+}
+
+.course-name {
+    width: auto !important;
+}
+
+.courses tr:hover {
+    background-color: white !important;
+    opacity: 1.0 !important;
+    color: black !important;
+    cursor: pointer !important;
+    /*border: 1px solid white !important;*/
+    /*transform: scale(1.025) !important;*/
+    /*transform: scaleX(1.05) !important;*/
+}
+
+.hours {
+    clear: both !important;
+    float: right !important;
+}
+
+.year1 {
+    background-color: #44416a !important;
+}
+
+.year2 {
+    background-color: #5e3866 !important;
+}
+
+.year3 {
+    background-color: #752b57 !important;
+}
+
+.year4 {
+    background-color: #851e3e !important;
+}
+
+.row {
+    margin: 0px !important;
+}
+
+.table th, .table td {
+    padding: 0.2rem !important;
+    cursor: pointer !important;
+}
+
+.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: #324664 !important;
+}
+
+.table-striped th, .table-striped td {
+    border-top: none !important;
+}
+
+table.dataTable tbody tr {
+    background-color: #343a40 !important;
+}
+
+.error {
+    background-color: darkred !important;
+    border-color: black !important;
+    padding: 0.65rem .75rem !important;
+    /*border-radius: 0.25rem !important;*/
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+    cursor: pointer !important;
+    visibility: hidden !important;
+}
+
+.error:hover {
+    transform: scale(1.05) !important;
+}
+
+#search {
+    background-color: #1e1f26 !important;
+    color: white !important;
+}
+
+.form {
+    background-color: #1e1f26 !important;
+    color: white !important;
+}
+
+    .form:focus {
+        background-color: #1e1f26 !important;
+        color: white !important;
+    }
+
+.card {
+    background-color: #1e1f26 !important;
+}
+
+.card-header {
+    padding: 0px !important;
+}
+
+.scroll {
+    max-height: 400px !important;
+    overflow-y: auto !important;
+}
+
+ul, ol {
+    margin-left: -2em !important;
+}
+
+.pending {
+    color: white !important;
+}
+
+.btn-container-left {
+    padding: 0px !important;
+    padding-right: 5px !important;
+}
+
+.btn-container-right {
+    padding: 0px !important;
+    padding-left: 5px !important;
+}
+
+.controls {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.btn-md {
+    width: 150px !important;
+}
+
+.btn {
+    border-radius: 0px !important;
+}
+
+.form-control {
+    border-radius: 0px !important;
+}
+
+.card {
+    border-radius: 0px !important;
+}
+
+table input {
+    max-width: 1000px !important;
+}
