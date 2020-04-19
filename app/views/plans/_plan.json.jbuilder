@@ -51,7 +51,8 @@ json.catalog do
 end
 
 #json.courses do
-#    @plan.plan_courses.each{ |planCourse| json.set! planCourse.course.designator, planCourse }
+#    @plan.plan_courses.each{ |planCourse|
+#        json.set! planCourse.course.designator, planCourse.course.name }
 #end
 
 json.categories do
