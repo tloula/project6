@@ -266,6 +266,7 @@ class Catalog {
     }
 }
 
+/*
 function addYear() {
     myPlan.addYear();
 }
@@ -273,6 +274,24 @@ function addYear() {
 function removeYear() {
     myPlan.removeYear();
 }
+*/
+
+$("#addYear").click(function() {
+    myPlan.addYear();
+});
+
+$("#removeYear").click(function() {
+    myPlan.removeYear();
+});
+
+/*document.getElementById("addYear").onclick = function addYear() {
+    myPlan.addYear();
+}
+
+document.getElementById("removeYear").onclick = function removeYear() {
+    myPlan.removeYear();
+}*/
+
 
 let myCatalog = new Catalog();
 let myCategories = new Categories(myCatalog);
@@ -323,7 +342,7 @@ $(document).ready(function () {
 });
 
 var catalogBuilt = false;
-$(this).ajaxStop(function () {
+$(document).ajaxStop(function () {
     if (catalogBuilt == false) {
         myCatalog.build();
         catalogBuilt = true;
