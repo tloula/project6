@@ -266,32 +266,15 @@ class Catalog {
     }
 }
 
-/*
-function addYear() {
-    myPlan.addYear();
-}
-
-function removeYear() {
-    myPlan.removeYear();
-}
-*/
-
-$("#addYear").click(function() {
-    myPlan.addYear();
+$(document).ready(function () {
+    $("#addYear").click(function() {
+        myPlan.addYear();
+    });
+    
+    $("#removeYear").click(function() {
+        myPlan.removeYear();
+    });
 });
-
-$("#removeYear").click(function() {
-    myPlan.removeYear();
-});
-
-/*document.getElementById("addYear").onclick = function addYear() {
-    myPlan.addYear();
-}
-
-document.getElementById("removeYear").onclick = function removeYear() {
-    myPlan.removeYear();
-}*/
-
 
 let myCatalog = new Catalog();
 let myCategories = new Categories(myCatalog);
