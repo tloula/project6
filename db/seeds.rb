@@ -92,7 +92,6 @@ plancourse1.year = 2020
 plancourse1.save!
 
 # New Stuff
-
 requirement1 = Requirement.new
 requirement1.name = "Req1"
 requirement1.major_id = major1.id
