@@ -16,7 +16,12 @@ class Plan {
     }
 
     addYear() {
-        var lastYear = this.years[this.years.length - 1].year;
+        var lastYear;
+        if (this.years.length){ // Years are empty (empty plan)
+            lastYear = this.years[this.years.length - 1].year;
+        } else {
+            lastYear = 2020;
+        }
         this.years.push(new Year(String(parseInt(lastYear) + 1)));
         this.convert();
         this.build();
@@ -306,7 +311,6 @@ function updatePlan(pid){
     });
 }
 
-// ******************** SELECT PLAN DROPDOWN METHODS ******************** //
 $(document).ready(function () {
     var planId = $("#planId").html();
     updatePlan(planId);
