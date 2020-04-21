@@ -10,6 +10,7 @@
         <tr>
           <th>Name</th>
           <th>Major</th>
+          <th>Catalog</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -19,6 +20,7 @@
           <tr>
             <td><%= plan.name %></td>
             <td><%= plan.major.name %></td>
+            <td><%= plan.catalog.year %></td>
             <td><%= link_to 'Show', plan %></td>
             <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
             <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
