@@ -76,7 +76,6 @@ html, body, .newBody {
 
 .semester:hover {
     transform: scale(1.05) !important;
-    /*border: 2px solid grey !important;*/
     padding: 8px !important;
 }
 
@@ -103,9 +102,6 @@ html, body, .newBody {
     opacity: 1.0 !important;
     color: black !important;
     cursor: pointer !important;
-    /*border: 1px solid white !important;*/
-    /*transform: scale(1.025) !important;*/
-    /*transform: scaleX(1.05) !important;*/
 }
 
 .hours {
@@ -133,28 +129,39 @@ html, body, .newBody {
     margin: 0px !important;
 }
 
+.btn-primary {
+    color: #fff !important;
+}
+
 .table th, .table td {
-    padding: 0.2rem !important;
-    cursor: pointer !important;
+    padding: 0.2rem;
+    cursor: pointer;
 }
 
 .table-striped tbody tr:nth-of-type(2n+1) {
-    background-color: #324664 !important;
+    background-color: #324664;
 }
 
 .table-striped th, .table-striped td {
-    border-top: none !important;
+    border-top: none;
 }
 
 table.dataTable tbody tr {
-    background-color: #343a40 !important;
+    background-color: #343a40;
+}
+
+table.dataTable {
+    margin-bottom: 0px;
+}
+
+.dataTables_info {
+    margin-top: 10px;
 }
 
 .error {
     background-color: darkred !important;
     border-color: black !important;
     padding: 0.65rem .75rem !important;
-    /*border-radius: 0.25rem !important;*/
     margin-bottom: 5px !important;
     margin-top: 5px !important;
     cursor: pointer !important;

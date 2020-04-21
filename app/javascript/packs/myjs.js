@@ -246,7 +246,7 @@ class Catalog {
 
     build() {
         $.each(this.courses, function () {
-            $("#catalogTable").append(
+            $("#catalog").append(
                 "<tr>" +
                 "<td>" + this.id + "</td>" +
                 "<td>" + this.name + "</td>" +
