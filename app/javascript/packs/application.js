@@ -16,6 +16,7 @@ require("jquery-ui")
 require("datatables.net")
 require("datatables.net-bs4")
 
+//= require popper
 require("bootstrap")
 
 import "bootstrap"
