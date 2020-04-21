@@ -11,6 +11,7 @@ user1.login = "joe"
 user1.email = "joe@cedarville.edu"
 user1.password = "password"
 user1.password_confirmation = "password"
+user1.role = "Admin"
 user1.save!
 
 user2 = User.new
@@ -18,7 +19,16 @@ user2.login = "pete"
 user2.email = "pete@cedarville.edu"
 user2.password = "password"
 user2.password_confirmation = "password"
+user2.role = "Faculty"
 user2.save!
+
+user3 = User.new
+user3.login = "steve"
+user3.email = "steve@cedarville.edu"
+user3.password = "password"
+user3.password_confirmation = "password"
+user3.role = "Student"
+user3.save!
 
 # New stuff
 catalog1 = Catalog.new
@@ -59,19 +69,19 @@ course2.description = "Trees Galore"
 course2.credits = 3
 course2.save!
 
-plancourse1 = PlanCourse.new
-plancourse1.plan_id = plan1.id
-plancourse1.course_id = course1.id
-plancourse1.term = "Fall"
-plancourse1.year = 2020
-plancourse1.save!
-
 plancourse2 = PlanCourse.new
 plancourse2.plan_id = plan1.id
 plancourse2.course_id = course2.id
 plancourse2.term = "Spring"
 plancourse2.year = 2020
 plancourse2.save!
+
+plancourse1 = PlanCourse.new
+plancourse1.plan_id = plan1.id
+plancourse1.course_id = course1.id
+plancourse1.term = "Fall"
+plancourse1.year = 2020
+plancourse1.save!
 
 # New Stuff
 
