@@ -285,10 +285,6 @@ let myCatalog = new Catalog();
 let myCategories = new Categories(myCatalog);
 let myPlan = new Plan(myCatalog);
 
-function updatePlan(pid){
-
-}
-
 $(document).ready(function () {
     var pid = $("#planId").html();
     // Get JSON Stuff
