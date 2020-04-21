@@ -307,21 +307,9 @@ function updatePlan(pid){
 }
 
 // ******************** SELECT PLAN DROPDOWN METHODS ******************** //
-
-function loadPlans() {
-    $.getJSON("http://judah.cedarville.edu/~loula/Project4/getPlans.php", function (json) {  // Returns all plans
-        const data = json;
-        var list = "";
-        $.each(json, function (id, name) {
-            list += "<option value='" + id + "'>" + name + "</option>";
-        });
-        document.getElementById("plan").innerHTML = list;
-    });
-}
-
 $(document).ready(function () {
-    loadPlans();
-    updatePlan(1);
+    var planId = $("#planId").html();
+    updatePlan(planId);
 });
 
 var catalogBuilt = false;
@@ -331,10 +319,3 @@ $(document).ajaxStop(function () {
         catalogBuilt = true;
     }
  });
-
-
-$('select').on('change', function() {
-    updatePlan(this.value);
-  });
-
-//END

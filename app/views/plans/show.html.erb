@@ -58,16 +58,27 @@
             <div class="col-lg-2 mx-auto">
                 <table>
                     <tr>
-                        <td width="125px"><strong>Student:</strong> <span id="studentName"></span></td>
+                        <td width="125px"><strong>Plan:</strong></td>
+                        <td>
+                            <%= @plan.name %>
+                            <span id="planId" style="display: none;"><%= @plan.id %></span>
+                        </td>
                     </tr>
                     <tr>
-                        <td><strong>Major:</strong> <span id="studentMajor"></span></td>
+                        <td><strong>Student:</strong></td>
+                        <td><span id="studentName"></span></td>
                     </tr>
                     <tr>
-                        <td><strong>Catalog:</strong> <span id="studentCatalog"></span></td>
+                        <td><strong>Major:</strong></td>
+                        <td><span id="studentMajor"></span></td>
                     </tr>
                     <tr>
-                        <td><strong>Total Hours Planned:</strong> <span id="totalHours"></span></td>
+                        <td><strong>Catalog:</strong></td>
+                        <td><span id="studentCatalog"></span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Hours:</strong></td>
+                        <td><span id="totalHours"></span></td>
                     </tr>
                 </table>
                 </div>
