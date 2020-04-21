@@ -17,10 +17,10 @@ class Plan {
 
     addYear() {
         var lastYear;
-        if (this.years.length){ // Years are empty (empty plan)
-            lastYear = this.years[this.years.length - 1].year;
-        } else {
+        if (this.years.length == 0){ // Years are empty (empty plan)
             lastYear = 2020;
+        } else {
+            lastYear = this.years[this.years.length - 1].year;
         }
         this.years.push(new Year(String(parseInt(lastYear) + 1)));
         this.convert();
@@ -286,6 +286,11 @@ let myCategories = new Categories(myCatalog);
 let myPlan = new Plan(myCatalog);
 
 function updatePlan(pid){
+
+}
+
+$(document).ready(function () {
+    var pid = $("#planId").html();
     // Get JSON Stuff
     $.getJSON("http://localhost:3000/plans/" + pid + ".json", function (json) {
         const data = json;
@@ -309,13 +314,9 @@ function updatePlan(pid){
         myPlan.build();
         myCategories.build();
     });
-}
-
-$(document).ready(function () {
-    var planId = $("#planId").html();
-    updatePlan(planId);
 });
 
+// Only build catalog once
 var catalogBuilt = false;
 $(document).ajaxStop(function () {
     if (catalogBuilt == false) {
