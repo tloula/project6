@@ -35,9 +35,17 @@ catalog1 = Catalog.new
 catalog1.year = 2017
 catalog1.save!
 
+catalog2 = Catalog.new
+catalog2.year = 2018
+catalog2.save!
+
 major1 = Major.new
 major1.name = "Computer Engineering"
 major1.save!
+
+major2 = Major.new
+major2.name = "Computer Science"
+major2.save!
 
 # old stuff
 # give joe a couple of plans
