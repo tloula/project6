@@ -12,6 +12,7 @@ require("packs/myjs")
 
 require("jquery")
 require("jquery-ui")
+require("jquery-ujs")
 
 require("datatables.net")
 require("datatables.net-bs4")
