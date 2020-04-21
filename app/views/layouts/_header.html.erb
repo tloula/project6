@@ -5,12 +5,12 @@
         </div>
         <div class="col-lg-6"></div>
         <div class="col-lg-1">
-            <a class="btn btn-primary btn-block d-none d-md-block" href="../../">Plans</a>
+            <%= link_to "View Plans", plans_path, :class => "btn btn-primary btn-block" %>
         </div>
         <div class="col-lg-1">
-            <a class="btn btn-primary btn-block d-none d-md-block" href="">Options</a>
+            <a class="btn btn-primary btn-block" href="">|</a>
         </div>
         <div class="col-lg-1">
-            <a class="btn btn-primary btn-block d-none d-md-block" href="">Save</a>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-danger btn-block" %>
         </div>
     </nav>
