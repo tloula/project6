@@ -1,6 +1,6 @@
 <%= form_with(model: plan, local: true) do |form| %>
   <% if plan.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-danger" id="error_explanation">
       <h2><%= pluralize(plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
 
       <ul>
@@ -12,11 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <table>
+      <tbody>
+        <tr>
+          <td><%= form.label :name %></td>
+          <td><%= form.text_field :name %></td>
+        <tr>
+        <tr>
+          <td><%= form.label :major %></td>
+          <td><%= form.select :major_id, options_for_select(Major.all.map{|s|[s.name, s.id]}) %></td>
+        <tr>
+        <tr>
+          <td><%= form.label :catalog %></td>
+          <td><%= form.select :catalog_id, options_for_select(Catalog.all.map{|s|[s.year, s.id]}) %></td>
+        <tr>
+      </tbody>
+    <table>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <button class="btn btn-success btn-block d-none d-md-block" action="submit">Create Plan</button>
   </div>
 <% end %>
