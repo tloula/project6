@@ -30,7 +30,6 @@ user3.password_confirmation = "password"
 user3.role = "Student"
 user3.save!
 
-# New stuff
 catalog1 = Catalog.new
 catalog1.year = 2017
 catalog1.save!
@@ -47,8 +46,6 @@ major2 = Major.new
 major2.name = "Computer Science"
 major2.save!
 
-# old stuff
-# give joe a couple of plans
 plan1 = Plan.new
 plan1.name = "Plan1"
 plan1.user_id = user1.id
@@ -203,6 +200,33 @@ course20.description = "Why do we take this again?"
 course20.credits = 3
 course20.save!
 
+plancourse5 = PlanCourse.new
+plancourse5.plan_id = plan1.id
+plancourse5.course_id = course6.id
+plancourse5.term = "Spring"
+plancourse5.year = 2020
+plancourse5.save!
+
+plancourse6 = PlanCourse.new
+plancourse6.plan_id = plan1.id
+plancourse6.course_id = course7.id
+plancourse6.term = "Spring"
+plancourse6.year = 2020
+plancourse6.save!
+
+plancourse7 = PlanCourse.new
+plancourse7.plan_id = plan1.id
+plancourse7.course_id = course7.id
+plancourse7.term = "Spring"
+plancourse7.year = 2020
+plancourse7.save!
+
+plancourse8 = PlanCourse.new
+plancourse8.plan_id = plan1.id
+plancourse8.course_id = course8.id
+plancourse8.term = "Spring"
+plancourse8.year = 2020
+plancourse8.save!
 
 plancourse1 = PlanCourse.new
 plancourse1.plan_id = plan1.id
@@ -232,34 +256,6 @@ plancourse4.term = "Fall"
 plancourse4.year = 2020
 plancourse4.save!
 
-plancourse5 = PlanCourse.new
-plancourse5.plan_id = plan1.id
-plancourse5.course_id = course6.id
-plancourse5.term = "Spring"
-plancourse5.year = 2020
-plancourse5.save!
-
-plancourse6 = PlanCourse.new
-plancourse6.plan_id = plan1.id
-plancourse6.course_id = course7.id
-plancourse6.term = "Spring"
-plancourse6.year = 2020
-plancourse6.save!
-
-plancourse7 = PlanCourse.new
-plancourse7.plan_id = plan1.id
-plancourse7.course_id = course7.id
-plancourse7.term = "Spring"
-plancourse7.year = 2020
-plancourse7.save!
-
-plancourse8 = PlanCourse.new
-plancourse8.plan_id = plan1.id
-plancourse8.course_id = course8.id
-plancourse8.term = "Spring"
-plancourse8.year = 2020
-plancourse8.save!
-
 plancourse9 = PlanCourse.new
 plancourse9.plan_id = plan1.id
 plancourse9.course_id = course5.id
@@ -267,9 +263,7 @@ plancourse9.term = "Fall"
 plancourse9.year = 2020
 plancourse9.save!
 
-
-
-# New Stuff
+# We aren't using requirements
 requirement1 = Requirement.new
 requirement1.name = "Req1"
 requirement1.major_id = major1.id
@@ -278,17 +272,14 @@ requirement1.save!
 
 category1 = Category.new
 category1.name = "Cognates"
-#category1.requirement_id = requirement1.id
 category1.save!
 
 category2 = Category.new
 category2.name = "Core"
-#category2.requirement_id = requirement1.id
 category2.save!
 
 category3 = Category.new
 category3.name = "Electives"
-#category3.requirement_id = requirement1.id
 category3.save!
 
 coursecatalog1 = CourseCatalog.new
@@ -313,7 +304,3 @@ CourseCatalog.create(course_id: course5.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course6.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course7.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course8.id, catalog_id: catalog1.id)
-
-#alternate syntax
-#Plan.create(user_id: user1.id, name: "Plan1")
-#Plan.create(user_id: user1.id, name: "Plan2")
