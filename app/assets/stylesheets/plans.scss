@@ -89,6 +89,7 @@ html, body, .newBody {
     min-height: 50px !important;
     transition: transform .2s !important; /* Animation */
     line-height: 1.45 !important;
+    user-select: none;
 }
 
 .semester:hover {
@@ -114,11 +115,16 @@ html, body, .newBody {
     background-color: white !important;
     opacity: 1.0 !important;
     color: black !important;
+    border: none;
     cursor: pointer !important;
 }
 
 .drag:hover {
     cursor: pointer !important;
+}
+
+.drag:active{
+    cursor: grabbing !important;
 }
 
 .ui-draggable-dragging {
@@ -172,6 +178,9 @@ html, body, .newBody {
 
 .table th, .table td {
     padding: 0.2rem;
+}
+
+.table td {
     cursor: pointer;
 }
 
@@ -189,6 +198,7 @@ table.dataTable tbody tr {
 
 table.dataTable {
     margin-bottom: 0px;
+    user-select: none;
 }
 
 .dataTables_info {
@@ -226,6 +236,7 @@ table.dataTable {
 
 .card {
     background-color: #1e1f26 !important;
+    user-select: none;
 }
 
 .card-header {

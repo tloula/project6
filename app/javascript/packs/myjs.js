@@ -48,6 +48,12 @@ class Plan {
                 if (i > 0){
                     i = i - 1;
                 }
+                // Mark course as not planned in accordian
+                $.each(myCatalog.courses, function () {  // Iterate through each course in the catalog
+                    if (course.id == this.id){
+                        this.planned = false;
+                    }
+                });
             }
         }
 
@@ -181,14 +187,14 @@ class Plan {
 }
 
 class Course {
-    constructor(id, name, description, credits, term, year, planned = false) {
+    constructor(id, name, description, credits, term, year) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.credits = credits;
         this.term = term;
         this.year = year;
-        this.planned = planned;
+        this.planned = false;
     }
 
     termId() {
@@ -325,7 +331,8 @@ class Catalog {
                 "scrollY": "200px",
                 "scrollCollapse": true,
                 "paging": false,
-                "scrollX": false
+                "scrollX": false,
+                "searching": false
             });
         });
     }
@@ -398,6 +405,12 @@ $(document).ajaxStop(function () {
             } else {
                 myPlan.courses.splice(i, 1);
             }
+            // Mark course as not planned in accordian
+            $.each(myCatalog.courses, function () {  // Iterate through each course in the catalog
+                if (draggable == this.id){
+                    this.planned = false;
+                }
+            });
         }
     }
 
