@@ -45,7 +45,7 @@ class Plan {
                     this.courses.splice(i, 1);
                 }
                 // Fix indexing since just removed a course
-                if (i > 0){
+                if (i >= 0){
                     i = i - 1;
                 }
                 // Mark course as not planned in accordian
