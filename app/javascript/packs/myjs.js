@@ -148,7 +148,7 @@ class Plan {
                 for (var k = 0; k < term.courses.length; k++) {                              // Iterate through each course in a term
                     var course = term.courses[k];
 
-                    html += '<tr class="drag" id="' + course.id + '"data-toggle="tooltip" data-placement="bottom" title="' + course.description +
+                    html += '<tr class="drag" id="' + course.id + '" title="' + course.description +
                         '"><td class="course-designator">' + course.id +
                         '</td><td class="course-name">' + course.name +
                         '</td></tr>';
