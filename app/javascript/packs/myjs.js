@@ -23,14 +23,35 @@ class Plan {
             lastYear = this.years[this.years.length - 1].year;
         }
         this.years.push(new Year(String(parseInt(lastYear) + 1)));
-        this.convert();
-        this.build();
+        init();
     }
 
     removeYear() {
-        this.years.pop();
-        this.convert();
-        this.build();
+        removeYear = this.years.pop().year;
+
+        // Delete courses in year from plan
+        for (i = 0; i < this.courses.length; i++){
+
+            var course = this.courses[i];
+            var courseYear = course.year;
+            if (course.term == "Spring" || course.term == "Summer") {
+                courseYear = String(parseInt(course.year) - 1);
+            }
+
+            if(courseYear == removeYear){
+                if (i == 0){
+                    this.courses.shift();
+                } else {
+                    this.courses.splice(i, 1);
+                }
+                // Fix indexing since just removed a course
+                if (i > 0){
+                    i = i - 1;
+                }
+            }
+        }
+
+        init();
     }
 
     hours() {
@@ -121,7 +142,7 @@ class Plan {
                 for (var k = 0; k < term.courses.length; k++) {                              // Iterate through each course in a term
                     var course = term.courses[k];
 
-                    html += '<tr data-toggle="tooltip" data-placement="bottom" title="' + course.description +
+                    html += '<tr class="drag" id="' + course.id + '"data-toggle="tooltip" data-placement="bottom" title="' + course.description +
                         '"><td class="course-designator">' + course.id +
                         '</td><td class="course-name">' + course.name +
                         '</td></tr>';
@@ -369,25 +390,39 @@ $(document).ajaxStop(function () {
     var draggable = ui.draggable.attr("id");
     var droppable = this.id;
     
-    var year = droppable.match(/\d+/)[0];
-    var term = droppable.match(/[A-Za-z]+/)[0];
-
-    // Correct year
-    if (term == "Spring" || term == "Summer") {
-        year = String(parseInt(year) + 1);
+    // Delete course from plan
+    for (i = 0; i < myPlan.courses.length; i++){
+        if(myPlan.courses[i].id == draggable){
+            if (i == 0){
+                myPlan.courses.shift();
+            } else {
+                myPlan.courses.splice(i, 1);
+            }
+        }
     }
 
-    var newCourse;
-    // Find course object from catalog
-    $.each(myCatalog.courses, function () {
-        if(this.id == draggable){
-            // Javascript doesn't support copy constructor :<
-            newCourse = new Course(this.id, this.name, this.description, this.credits, term, year, this.planned);
-        }
-    });
+    // Add course to plan
+    if (droppable != "remove-course"){
+        var year = droppable.match(/\d+/)[0];
+        var term = droppable.match(/[A-Za-z]+/)[0];
 
-    // Add course object to plan
-    myPlan.courses.push(newCourse);
+        // Correct year
+        if (term == "Spring" || term == "Summer") {
+            year = String(parseInt(year) + 1);
+        }
+
+        var newCourse;
+        // Find course object from catalog
+        $.each(myCatalog.courses, function () {
+            if(this.id == draggable){
+                // Javascript doesn't support copy constructor :<
+                newCourse = new Course(this.id, this.name, this.description, this.credits, term, year, this.planned);
+            }
+        });
+
+        // Add course object to plan
+        myPlan.courses.push(newCourse);
+    }
 
     // Rebuild everything
     init();

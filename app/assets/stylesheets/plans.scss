@@ -102,16 +102,12 @@ html, body, .newBody {
     border-top: 1px solid white !important;
 }
 
-    .courses table {
-        width: 100% !important;
-    }
+.courses table {
+    width: 100% !important;
+}
 
 .course-designator {
     width: 80px !important;
-}
-
-.course-name {
-    width: auto !important;
 }
 
 .courses tr:hover {
@@ -119,6 +115,26 @@ html, body, .newBody {
     opacity: 1.0 !important;
     color: black !important;
     cursor: pointer !important;
+}
+
+.drag:hover {
+    cursor: pointer !important;
+}
+
+.ui-draggable-dragging {
+    width: auto !important;
+    max-width: 400px;
+    height: auto !important;
+    color: white !important;
+    text-align : center;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 1px solid #007bff;
+    border-radius: 2px;
+    background-color: black;
+    cursor: grabbing !important;
 }
 
 .hours {
