@@ -108,7 +108,11 @@ html, body, .newBody {
 }
 
 .course-designator {
-    width: 80px !important;
+    width: 100px !important;
+}
+
+.course-credits {
+    text-align: right;
 }
 
 .courses tr:hover {

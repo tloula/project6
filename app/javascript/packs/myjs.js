@@ -151,6 +151,7 @@ class Plan {
                     html += '<tr class="drag" id="' + course.id + '" title="' + course.description +
                         '"><td class="course-designator">' + course.id +
                         '</td><td class="course-name">' + course.name +
+                        '</td><td class="course-credits">' + course.credits +
                         '</td></tr>';
                 }
                 html += '</table></div></div>';
