@@ -200,68 +200,245 @@ course20.description = "Why do we take this again?"
 course20.credits = 3
 course20.save!
 
+course21 = Course.new
+course21.name = "SPIFO"
+course21.designator = "BTGE-1720"
+course21.description = "Introductory Bible Class"
+course21.credits = 3
+course21.save!
+
+course22 = Course.new
+course22.name = "Ethics"
+course22.designator = "EGGN-3110"
+course22.description = "Politicians need to take this course!"
+course22.credits = 3
+course22.save!
+
+course23 = Course.new
+course23.name = "Computer Graphics"
+course23.designator = "CS-4710"
+course23.description = "Just games"
+course23.credits = 3
+course23.save!
+
+course24 = Course.new
+course24.name = "Discrete Math w\/ Prob"
+course24.designator = "MATH-2520"
+course24.description = "We should always be discrete"
+course24.credits = 3
+course24.save!
+
+course25 = Course.new
+course25.name = "Linear Algebra"
+course25.designator = "MATH-3610"
+course25.description = "As opposed to non-linear algegra?"
+course25.credits = 3
+course25.save!
+
+course26 = Course.new
+course26.name = "Physics I"
+course26.designator = "PHYS-2110"
+course26.description = "velovity and MAGNITUDE?"
+course26.credits = 3
+course26.save!
+
+course27 = Course.new
+course27.name = "PACL"
+course27.designator = "IDK-0000"
+course27.description = "Most valuable class of your CU Career they said"
+course27.credits = 3
+course27.save!
+
+# add courses to plan
+
+plancourse23 = PlanCourse.new
+plancourse23.plan_id = plan1.id
+plancourse23.course_id = course21.id
+plancourse23.term = "Fall"
+plancourse23.year = 2017
+plancourse23.save!
+
+plancourse24 = PlanCourse.new
+plancourse24.plan_id = plan1.id
+plancourse24.course_id = course13.id
+plancourse24.term = "Fall"
+plancourse24.year = 2017
+plancourse24.save!
+
+plancourse21 = PlanCourse.new
+plancourse21.plan_id = plan1.id
+plancourse21.course_id = course26.id
+plancourse21.term = "Spring"
+plancourse21.year = 2018
+plancourse21.save!
+
+plancourse22 = PlanCourse.new
+plancourse22.plan_id = plan1.id
+plancourse22.course_id = course27.id
+plancourse22.term = "Spring"
+plancourse22.year = 2018
+plancourse22.save!
+
+plancourse19 = PlanCourse.new
+plancourse19.plan_id = plan1.id
+plancourse19.course_id = course1.id
+plancourse19.term = "Fall"
+plancourse19.year = 2018
+plancourse19.save!
+
+plancourse20 = PlanCourse.new
+plancourse20.plan_id = plan1.id
+plancourse20.course_id = course2.id
+plancourse20.term = "Fall"
+plancourse20.year = 2018
+plancourse20.save!
+
+plancourse26 = PlanCourse.new
+plancourse26.plan_id = plan1.id
+plancourse26.course_id = course18.id
+plancourse26.term = "Fall"
+plancourse26.year = 2018
+plancourse26.save!
+
+plancourse27 = PlanCourse.new
+plancourse27.plan_id = plan1.id
+plancourse27.course_id = course20.id
+plancourse27.term = "Fall"
+plancourse27.year = 2018
+plancourse27.save!
+
+plancourse16 = PlanCourse.new
+plancourse16.plan_id = plan1.id
+plancourse16.course_id = course15.id
+plancourse16.term = "Spring"
+plancourse16.year = 2019
+plancourse16.save!
+
+plancourse17 = PlanCourse.new
+plancourse17.plan_id = plan1.id
+plancourse17.course_id = course17.id
+plancourse17.term = "Spring"
+plancourse17.year = 2019
+plancourse17.save!
+
+plancourse18 = PlanCourse.new
+plancourse18.plan_id = plan1.id
+plancourse18.course_id = course19.id
+plancourse18.term = "Spring"
+plancourse18.year = 2019
+plancourse18.save!
+
+plancourse10 = PlanCourse.new
+plancourse10.plan_id = plan1.id
+plancourse10.course_id = course14.id
+plancourse10.term = "Fall"
+plancourse10.year = 2019
+plancourse10.save!
+
+plancourse11 = PlanCourse.new
+plancourse11.plan_id = plan1.id
+plancourse11.course_id = course9.id
+plancourse11.term = "Fall"
+plancourse11.year = 2019
+plancourse11.save!
+
+plancourse12 = PlanCourse.new
+plancourse12.plan_id = plan1.id
+plancourse12.course_id = course6.id
+plancourse12.term = "Fall"
+plancourse12.year = 2019
+plancourse12.save!
+
 plancourse5 = PlanCourse.new
 plancourse5.plan_id = plan1.id
-plancourse5.course_id = course6.id
+plancourse5.course_id = course4.id
 plancourse5.term = "Spring"
 plancourse5.year = 2020
 plancourse5.save!
 
 plancourse6 = PlanCourse.new
 plancourse6.plan_id = plan1.id
-plancourse6.course_id = course7.id
+plancourse6.course_id = course3.id
 plancourse6.term = "Spring"
 plancourse6.year = 2020
 plancourse6.save!
 
 plancourse7 = PlanCourse.new
 plancourse7.plan_id = plan1.id
-plancourse7.course_id = course7.id
+plancourse7.course_id = course10.id
 plancourse7.term = "Spring"
 plancourse7.year = 2020
 plancourse7.save!
 
 plancourse8 = PlanCourse.new
 plancourse8.plan_id = plan1.id
-plancourse8.course_id = course8.id
+plancourse8.course_id = course14.id
 plancourse8.term = "Spring"
 plancourse8.year = 2020
 plancourse8.save!
 
 plancourse1 = PlanCourse.new
 plancourse1.plan_id = plan1.id
-plancourse1.course_id = course1.id
+plancourse1.course_id = course11.id
 plancourse1.term = "Fall"
 plancourse1.year = 2020
 plancourse1.save!
 
 plancourse2 = PlanCourse.new
 plancourse2.plan_id = plan1.id
-plancourse2.course_id = course2.id
+plancourse2.course_id = course22.id
 plancourse2.term = "Fall"
 plancourse2.year = 2020
 plancourse2.save!
 
 plancourse3 = PlanCourse.new
 plancourse3.plan_id = plan1.id
-plancourse3.course_id = course3.id
+plancourse3.course_id = course25.id
 plancourse3.term = "Fall"
 plancourse3.year = 2020
 plancourse3.save!
 
 plancourse4 = PlanCourse.new
 plancourse4.plan_id = plan1.id
-plancourse4.course_id = course4.id
+plancourse4.course_id = course24.id
 plancourse4.term = "Fall"
 plancourse4.year = 2020
 plancourse4.save!
 
 plancourse9 = PlanCourse.new
 plancourse9.plan_id = plan1.id
-plancourse9.course_id = course5.id
+plancourse9.course_id = course23.id
 plancourse9.term = "Fall"
 plancourse9.year = 2020
 plancourse9.save!
+
+plancourse13 = PlanCourse.new
+plancourse13.plan_id = plan1.id
+plancourse13.course_id = course16.id
+plancourse13.term = "Spring"
+plancourse13.year = 2021
+plancourse13.save!
+
+plancourse14 = PlanCourse.new
+plancourse14.plan_id = plan1.id
+plancourse14.course_id = course12.id
+plancourse14.term = "Spring"
+plancourse14.year = 2021
+plancourse14.save!
+
+plancourse15 = PlanCourse.new
+plancourse15.plan_id = plan1.id
+plancourse15.course_id = course7.id
+plancourse15.term = "Spring"
+plancourse15.year = 2021
+plancourse15.save!
+
+plancourse25 = PlanCourse.new
+plancourse25.plan_id = plan1.id
+plancourse25.course_id = course21.id
+plancourse25.term = "Spring"
+plancourse25.year = 2021
+plancourse25.save!
 
 # We aren't using requirements
 requirement1 = Requirement.new
@@ -297,6 +474,16 @@ coursecategory1.course_id = course1.id
 coursecategory1.category_id = category1.id
 coursecategory1.save!
 
+coursecategory2 = CourseCategory.new
+coursecategory2.course_id = course22.id
+coursecategory2.category_id = category2.id
+coursecategory2.save!
+
+coursecategory3 = CourseCategory.new
+coursecategory3.course_id = course27.id
+coursecategory3.category_id = category3.id
+coursecategory3.save!
+
 CourseCatalog.create(course_id: course2.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course3.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course4.id, catalog_id: catalog1.id)
@@ -304,3 +491,49 @@ CourseCatalog.create(course_id: course5.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course6.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course7.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course8.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course9.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course10.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course11.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course12.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course13.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course14.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course15.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course16.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course17.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course18.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course19.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course20.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course21.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course22.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course23.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course24.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course25.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course26.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course27.id, catalog_id: catalog1.id)
+
+CourseCategory.create(course_id: course2.id, category_id: category2.id)
+CourseCategory.create(course_id: course3.id, category_id: category2.id)
+CourseCategory.create(course_id: course4.id, category_id: category2.id)
+CourseCategory.create(course_id: course5.id, category_id: category2.id)
+CourseCategory.create(course_id: course6.id, category_id: category2.id)
+CourseCategory.create(course_id: course7.id, category_id: category2.id)
+CourseCategory.create(course_id: course8.id, category_id: category2.id)
+CourseCategory.create(course_id: course9.id, category_id: category1.id)
+CourseCategory.create(course_id: course10.id, category_id: category1.id)
+CourseCategory.create(course_id: course11.id, category_id: category2.id)
+CourseCategory.create(course_id: course12.id, category_id: category2.id)
+CourseCategory.create(course_id: course13.id, category_id: category2.id)
+CourseCategory.create(course_id: course14.id, category_id: category1.id)
+CourseCategory.create(course_id: course15.id, category_id: category2.id)
+CourseCategory.create(course_id: course16.id, category_id: category2.id)
+CourseCategory.create(course_id: course17.id, category_id: category1.id)
+CourseCategory.create(course_id: course18.id, category_id: category1.id)
+CourseCategory.create(course_id: course19.id, category_id: category1.id)
+CourseCategory.create(course_id: course20.id, category_id: category1.id)
+CourseCategory.create(course_id: course21.id, category_id: category3.id)
+CourseCategory.create(course_id: course22.id, category_id: category2.id)
+CourseCategory.create(course_id: course23.id, category_id: category2.id)
+CourseCategory.create(course_id: course24.id, category_id: category2.id)
+CourseCategory.create(course_id: course25.id, category_id: category1.id)
+CourseCategory.create(course_id: course26.id, category_id: category2.id)
+CourseCategory.create(course_id: course27.id, category_id: category3.id)
