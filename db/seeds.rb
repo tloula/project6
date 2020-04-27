@@ -365,4 +365,3 @@ CourseCatalog.create(course_id: course17.id, catalog_id: catalog2.id)
 CourseCatalog.create(course_id: course18.id, catalog_id: catalog2.id)
 CourseCatalog.create(course_id: course19.id, catalog_id: catalog2.id)
 CourseCatalog.create(course_id: course20.id, catalog_id: catalog2.id)
->>>>>>> 5aa99869b9b052a37007fd411469e1674aafddc5
