@@ -26,6 +26,14 @@ h1, h2 {
     margin-top: 25px !important;
 }
 
+.plannedCourse {
+    color: green;
+}
+
+.unplannedCourse {
+    color: white;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {
@@ -81,6 +89,7 @@ html, body, .newBody {
     min-height: 50px !important;
     transition: transform .2s !important; /* Animation */
     line-height: 1.45 !important;
+    user-select: none;
 }
 
 .semester:hover {
@@ -94,23 +103,48 @@ html, body, .newBody {
     border-top: 1px solid white !important;
 }
 
-    .courses table {
-        width: 100% !important;
-    }
-
-.course-designator {
-    width: 80px !important;
+.courses table {
+    width: 100% !important;
 }
 
-.course-name {
-    width: auto !important;
+.course-designator {
+    width: 100px !important;
+}
+
+.course-credits {
+    text-align: right;
 }
 
 .courses tr:hover {
     background-color: white !important;
     opacity: 1.0 !important;
     color: black !important;
+    border: none;
     cursor: pointer !important;
+}
+
+.drag:hover {
+    cursor: pointer !important;
+}
+
+.drag:active{
+    cursor: grabbing !important;
+}
+
+.ui-draggable-dragging {
+    width: auto !important;
+    max-width: 400px;
+    height: auto !important;
+    color: white !important;
+    text-align : center;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 1px solid #007bff;
+    border-radius: 2px;
+    background-color: black;
+    cursor: grabbing !important;
 }
 
 .hours {
@@ -148,6 +182,9 @@ html, body, .newBody {
 
 .table th, .table td {
     padding: 0.2rem;
+}
+
+.table td {
     cursor: pointer;
 }
 
@@ -165,6 +202,7 @@ table.dataTable tbody tr {
 
 table.dataTable {
     margin-bottom: 0px;
+    user-select: none;
 }
 
 .dataTables_info {
@@ -202,6 +240,7 @@ table.dataTable {
 
 .card {
     background-color: #1e1f26 !important;
+    user-select: none;
 }
 
 .card-header {

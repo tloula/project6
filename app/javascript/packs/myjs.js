@@ -23,14 +23,41 @@ class Plan {
             lastYear = this.years[this.years.length - 1].year;
         }
         this.years.push(new Year(String(parseInt(lastYear) + 1)));
-        this.convert();
-        this.build();
+        init();
     }
 
     removeYear() {
-        this.years.pop();
-        this.convert();
-        this.build();
+        removeYear = this.years.pop().year;
+
+        // Delete courses in year from plan
+        for (i = 0; i < this.courses.length; i++){
+
+            var course = this.courses[i];
+            var courseYear = course.year;
+            if (course.term == "Spring" || course.term == "Summer") {
+                courseYear = String(parseInt(course.year) - 1);
+            }
+
+            if(courseYear == removeYear){
+                if (i == 0){
+                    this.courses.shift();
+                } else {
+                    this.courses.splice(i, 1);
+                }
+                // Fix indexing since just removed a course
+                if (i >= 0){
+                    i = i - 1;
+                }
+                // Mark course as not planned in accordian
+                $.each(myCatalog.courses, function () {  // Iterate through each course in the catalog
+                    if (course.id == this.id){
+                        this.planned = false;
+                    }
+                });
+            }
+        }
+
+        init();
     }
 
     hours() {
@@ -106,7 +133,7 @@ class Plan {
             for (var j = 0; j < 3; j++) {                                                     // Iterate through each of the three terms in a year
                 var term = year.terms[j];
 
-                html += '<div class="col-lg semester year' + String(z + 1) + '">';
+                html += '<div class="col-lg drop semester year' + String(z + 1) + '" id="' + term.term + year.year + '">';
 
                 var modifiedYear = year.year;
                 if (term.term == "Spring" || term.term == "Summer") {
@@ -121,9 +148,10 @@ class Plan {
                 for (var k = 0; k < term.courses.length; k++) {                              // Iterate through each course in a term
                     var course = term.courses[k];
 
-                    html += '<tr data-toggle="tooltip" data-placement="bottom" title="' + course.description +
+                    html += '<tr class="drag" id="' + course.id + '" title="' + course.description +
                         '"><td class="course-designator">' + course.id +
                         '</td><td class="course-name">' + course.name +
+                        '</td><td class="course-credits">' + course.credits +
                         '</td></tr>';
                 }
                 html += '</table></div></div>';
@@ -131,6 +159,10 @@ class Plan {
             html += '</div>';
         }
         document.getElementById("academicPlan").innerHTML = html;
+        // Enable dropping of classes into plan, this only worked when placed here
+        $('.drop').droppable( {
+            drop: handleDropEvent
+        });
         document.getElementById("totalHours").innerHTML = this.hours();
 
         // Initialize Tooltips
@@ -142,6 +174,17 @@ class Plan {
         document.getElementById("studentMajor").innerHTML = this.major;
         document.getElementById("studentCatalog").innerHTML = this.catYear;
     }
+
+    evaluate(catalog){                             // Mark courses as planned if on the plan
+        $.each(this.courses, function () {  // Iterate through each course in the plan
+            var planCourse = this;
+            $.each(catalog.courses, function () {  // Iterate through each course in the catalog
+                if (planCourse.id == this.id){
+                    this.planned = true;
+                }
+            });
+        });
+    }
 }
 
 class Course {
@@ -152,6 +195,7 @@ class Course {
         this.credits = credits;
         this.term = term;
         this.year = year;
+        this.planned = false;
     }
 
     termId() {
@@ -200,46 +244,69 @@ class Categories {
         $("#cognates").html('');
         $.each(this.cognates.courses, function () {
             var categoryId = this.id;
-            var courseName;
+            var course;
             $.each(catalog.courses, function () {
                 if (this.id == categoryId) {
-                    courseName = this.name;
+                    course = this;
                     return false;
                 }
             });
-            if (courseName) {
-                $("#cognates").append("<li>" + this.id + " " + courseName + "</li>");
+            if (course) {
+                var cssClass = "unplannedCourse";
+                if(course.planned == true){
+                    cssClass = "plannedCourse";
+                }
+                $("#cognates").append("<li class='drag " + cssClass + "' id='" + this.id + "'>" + this.id + " " + course.name + "</li>");
             }
         });
-        $("#courses").html('');
+        $('.drag').draggable( {
+            appendTo: "body",
+            helper: "clone"
+       });
+        $("#core").html('');
         $.each(this.core.courses, function () {
-            var categoryId = this;
-            var courseName;
+            var categoryId = this.id;
+            var course;
             $.each(catalog.courses, function () {
                 if (this.id == categoryId) {
-                    courseName = this.name;
+                    course = this;
                     return false;
                 }
             });
-            if (courseName) {
-                $("#core").append("<li>" + this + " " + courseName + "</li>");
+            if (course) {
+                var cssClass = "unplannedCourse";
+                if(course.planned == true){
+                    cssClass = "plannedCourse";
+                }
+                $("#core").append("<li class='drag " + cssClass + "' id='" + this.id + "'>" + this.id + " " + course.name + "</li>");
             }
         });
+        $('.drag').draggable( {
+            appendTo: "body",
+            helper: "clone"
+       });
         $("#electives").html('');
         $.each(this.electives.courses, function () {
-            var categoryId = this;
-            var courseName;
+            var categoryId = this.id;
+            var course;
             $.each(catalog.courses, function () {
                 if (this.id == categoryId) {
-                    courseName = this.name;
+                    course = this;
                     return false;
                 }
             });
-            if (courseName) {
-                $("#electives").append("<li>" + this + " " + courseName + "</li>");
+            if (course) {
+                var cssClass = "unplannedCourse";
+                if(course.planned == true){
+                    cssClass = "plannedCourse";
+                }
+                $("#electives").append("<li class='drag " + cssClass + "' id='" + this.id + "'>" + this.id + " " + course.name + "</li>");
             }
         });
-
+        $('.drag').draggable( {
+            appendTo: "body",
+            helper: "clone"
+       });
     }
 }
 
@@ -252,7 +319,7 @@ class Catalog {
     build() {
         $.each(this.courses, function () {
             $("#catalog").append(
-                "<tr>" +
+                "<tr class='drag' id='" + this.id + "'>" +
                 "<td>" + this.id + "</td>" +
                 "<td>" + this.name + "</td>" +
                 "<td>" + this.description + "</td>" +
@@ -265,7 +332,8 @@ class Catalog {
                 "scrollY": "200px",
                 "scrollCollapse": true,
                 "paging": false,
-                "scrollX": false
+                "scrollX": false,
+                "searching": false
             });
         });
     }
@@ -290,10 +358,6 @@ $(document).ready(function () {
     // Get JSON Stuff
     $.getJSON("http://localhost:3000/plans/" + pid + ".json", function (json) {
         const data = json;
-        myCategories.cognates = data.categories.Cognates;
-        myCategories.core = data.categories.Core;
-        myCategories.electives = data.categories.Electives;
-        myCategories.build();
         myPlan.student = data.plan.student;
         myPlan.name = data.plan.name;
         myPlan.major = data.plan.major;
@@ -303,12 +367,13 @@ $(document).ready(function () {
         myPlan.catYear = data.plan.catYear;
         myCatalog.year = data.catalog.year;
         myCatalog.courses = data.catalog.courses;
+        myCategories.cognates = data.categories.Cognates;
+        myCategories.core = data.categories.Core;
+        myCategories.electives = data.categories.Electives;
     });
 
     $(document).ajaxStop(function () {
-        myPlan.convert();
-        myPlan.build();
-        myCategories.build();
+        init();
     });
 });
 
@@ -320,3 +385,59 @@ $(document).ajaxStop(function () {
         catalogBuilt = true;
     }
  });
+
+ function init(){
+    myPlan.convert();
+    myPlan.build();
+    myPlan.evaluate(myCatalog); // Pass catalog to check which courses are planned
+    myCategories.build();
+ }
+
+ // ************************************************** DRAG N DROP ************************************************** //
+ function handleDropEvent( event, ui ) {
+    var draggable = ui.draggable.attr("id");
+    var droppable = this.id;
+    
+    // Delete course from plan
+    for (i = 0; i < myPlan.courses.length; i++){
+        if(myPlan.courses[i].id == draggable){
+            if (i == 0){
+                myPlan.courses.shift();
+            } else {
+                myPlan.courses.splice(i, 1);
+            }
+            // Mark course as not planned in accordian
+            $.each(myCatalog.courses, function () {  // Iterate through each course in the catalog
+                if (draggable == this.id){
+                    this.planned = false;
+                }
+            });
+        }
+    }
+
+    // Add course to plan
+    if (droppable != "remove-course"){
+        var year = droppable.match(/\d+/)[0];
+        var term = droppable.match(/[A-Za-z]+/)[0];
+
+        // Correct year
+        if (term == "Spring" || term == "Summer") {
+            year = String(parseInt(year) + 1);
+        }
+
+        var newCourse;
+        // Find course object from catalog
+        $.each(myCatalog.courses, function () {
+            if(this.id == draggable){
+                // Javascript doesn't support copy constructor :<
+                newCourse = new Course(this.id, this.name, this.description, this.credits, term, year, this.planned);
+            }
+        });
+
+        // Add course object to plan
+        myPlan.courses.push(newCourse);
+    }
+
+    // Rebuild everything
+    init();
+ }
