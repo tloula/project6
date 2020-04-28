@@ -208,14 +208,14 @@ course20.credits = 4
 course20.save!
 
 course21 = Course.new
-course21.name = "SPIFO"
+course21.name = "Bible & The Gospel"
 course21.designator = "BTGE-1720"
 course21.description = "Introductory Bible Class"
 course21.credits = 3
 course21.save!
 
 course22 = Course.new
-course22.name = "Ethics"
+course22.name = "Professional Ethics"
 course22.designator = "EGGN-3110"
 course22.description = "Politicians need to take this course!"
 course22.credits = 3
@@ -229,7 +229,7 @@ course23.credits = 3
 course23.save!
 
 course24 = Course.new
-course24.name = "Discrete Math w\/ Prob"
+course24.name = "Discrete Math w\/ Probability Principles"
 course24.designator = "MATH-2520"
 course24.description = "We should always be discrete"
 course24.credits = 3
@@ -250,7 +250,7 @@ course26.credits = 3
 course26.save!
 
 course27 = Course.new
-course27.name = "PACL"
+course27.name = "Physical Activy in the Christian Life"
 course27.designator = "IDK-0000"
 course27.description = "Most valuable class of your CU Career they said"
 course27.credits = 3
@@ -318,13 +318,13 @@ CourseCategory.create(course_id: course16.id, category_id: category1.id)
 CourseCategory.create(course_id: course17.id, category_id: category3.id)
 CourseCategory.create(course_id: course18.id, category_id: category3.id)
 CourseCategory.create(course_id: course19.id, category_id: category3.id)
+CourseCategory.create(course_id: course26.id, category_id: category3.id)
 CourseCategory.create(course_id: course20.id, category_id: category3.id)
 CourseCategory.create(course_id: course21.id, category_id: category2.id)
-CourseCategory.create(course_id: course22.id, category_id: category2.id)
+CourseCategory.create(course_id: course22.id, category_id: category1.id)
 CourseCategory.create(course_id: course23.id, category_id: category1.id)
 CourseCategory.create(course_id: course24.id, category_id: category1.id)
 CourseCategory.create(course_id: course25.id, category_id: category2.id)
-CourseCategory.create(course_id: course26.id, category_id: category3.id)
 CourseCategory.create(course_id: course27.id, category_id: category2.id)
 
 # 2017
@@ -348,13 +348,13 @@ CourseCatalog.create(course_id: course16.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course17.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course18.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course19.id, catalog_id: catalog1.id)
+CourseCatalog.create(course_id: course26.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course20.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course21.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course22.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course23.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course24.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course25.id, catalog_id: catalog1.id)
-CourseCatalog.create(course_id: course26.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course27.id, catalog_id: catalog1.id)
 
 # 2018
