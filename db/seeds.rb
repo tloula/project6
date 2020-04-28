@@ -246,7 +246,7 @@ course26 = Course.new
 course26.name = "Physics I"
 course26.designator = "PHYS-2110"
 course26.description = "velovity and MAGNITUDE?"
-course26.credits = 3
+course26.credits = 4
 course26.save!
 
 course27 = Course.new
