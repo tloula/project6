@@ -356,7 +356,7 @@ let myPlan = new Plan(myCatalog);
 $(document).ready(function () {
     var pid = $("#planId").html();
     // Get JSON Stuff
-    $.getJSON("http://localhost:3000/plans/" + pid + ".json", function (json) {
+    $.getJSON(window.location.href + ".json", function (json) {
         const data = json;
         myPlan.student = data.plan.student;
         myPlan.name = data.plan.name;
