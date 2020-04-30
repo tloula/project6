@@ -339,7 +339,7 @@ class Catalog {
     }
 }
 
-$(document).ready(function () {
+function initButtons() {
     $("#addYear").click(function() {
         myPlan.addYear();
     });
@@ -347,15 +347,31 @@ $(document).ready(function () {
     $("#removeYear").click(function() {
         myPlan.removeYear();
     });
-});
+}
+
+function once(fn, context) { 
+	var result;
+
+	return function() { 
+		if(fn) {
+			result = fn.apply(context || this, arguments);
+			fn = null;
+		}
+
+		return result;
+	};
+}
 
 let myCatalog = new Catalog();
 let myCategories = new Categories(myCatalog);
 let myPlan = new Plan(myCatalog);
 
-$(document).ready(function () {
-    var pid = $("#planId").html();
-    // Get JSON Stuff
+var buildCatalog = once(function() {
+    myCatalog.build();
+});
+
+function JSON(loaded) {
+    // Call JSON twice, becuase for some reason it fails the first time
     $.getJSON(window.location.href + ".json", function (json) {
         const data = json;
         myPlan.student = data.plan.student;
@@ -374,17 +390,21 @@ $(document).ready(function () {
 
     $(document).ajaxStop(function () {
         init();
+        if(!loaded){
+            myCatalog.build();
+        }
     });
-});
+}
 
-// Only build catalog once
-var catalogBuilt = false;
-$(document).ajaxStop(function () {
-    if (catalogBuilt == false) {
-        myCatalog.build();
-        catalogBuilt = true;
+var loaded = false;
+document.addEventListener("turbolinks:load", function() {
+    // Only run on plan view page
+    if(!isNaN(window.location.href.slice(-1))){
+        initButtons();
+        JSON(loaded);
+        loaded = true;
     }
- });
+})
 
  function init(){
     myPlan.convert();
