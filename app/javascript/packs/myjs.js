@@ -436,7 +436,7 @@ document.addEventListener("turbolinks:load", function() {
     }
 
     // Add course to plan
-    if (droppable != "remove-course"){
+    if (droppable != "remove-course" && droppable != "catalogTable"){
         var year = droppable.match(/\d+/)[0];
         var term = droppable.match(/[A-Za-z]+/)[0];
 

@@ -2,9 +2,7 @@
     <section id="full-height" class="text-white">
         <div class="row">
             <div class="col-lg-2 mx-auto">
-                <a class="btn btn-primary btn-block d-md-none" href="http://judah.cedarville.edu/~loula/cs3220.html">Logout</a>
-                <a class="btn btn-primary btn-block d-md-none" href="#">Options</a>
-                <a class="btn btn-primary btn-block d-md-none" href="#">Save</a>
+                <h3>Requirements</h3>
                 <div id="accordion">
                     <div class="card">
                         <div class="card-header" id="headingOne">
@@ -52,6 +50,7 @@
                 </div>
             </div>
             <div class="col-lg-10 mx-auto">
+            <h3>Academic Plan</h3>
                 <div id="academicPlan"></div>
             </div>
         </div>
@@ -85,12 +84,14 @@
                 </div>
             <div class="col-lg-10 mx-auto">
                 <div class="row controls">
+                    <div class="col-md-2"><h3>Course Catalog</h3></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"><button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#instructions">Instructions</button></div>
                     <div class="col-md-2"><input class="btn btn-primary btn-block" id="addYear" type="button" value="Add Year" /></div>
                     <div class="col-md-2"><input class="btn btn-danger btn-block" id="removeYear" type="button" value="Remove Year" /></div>
                     <div class="col-md-2"><input class="btn btn-dark btn-block border border-secondary drop" id="remove-course" type="button" value="Remove Course" /></div>
-                    <div class="col-md-6"></div>
                 </div>
-                <table class="table table-striped table-dark" id="catalogTable">
+                <table class="table table-striped table-dark drop" id="catalogTable">
                     <thead>
                         <tr>
                             <th id="classID">Id</th>
@@ -106,3 +107,28 @@
         </div>
     </section>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="instructionsLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="instructionsLabel">APE Instructions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true"></span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <ul>
+            <li>To add a course to a Plan, drag and drop from the Catalog or the Requirements Accordian to the Plan.</li>
+            <li>To remove a course from the Plan, drag and drop into to the <i>Remove Course</i> button or into the catalog.</li>
+            <li>Courses can be dragged and dropped among semesters</li>
+            <li>Courses included in the Plan highlight in green in the Requirements.</li>
+            <li>Total semester hours dynamically update based on course load.</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+    </div>
+</div>

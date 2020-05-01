@@ -1,16 +1,16 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="col-lg-3">
-            <a class="navbar-brand js-scroll-trigger" href="">APE<small> ACADEMIC PLANNING SOLUTIONS</small></a>
+            <a class="navbar-brand js-scroll-trigger" href="">APE<small> ACADEMIC PLANNING ENVIRONMENT</small></a>
         </div>
-        <div class="col-lg-6"></div>
-        <div class="col-lg-1">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-2">
             <%= link_to "View Plans", plans_path, :class => "btn btn-primary btn-block" %>
         </div>
-        <div class="col-lg-1">
+        <div class="col-lg-2">
             <%= link_to "Settings", edit_user_registration_path, :class => "btn btn-info btn-block" %>
         </div>
-        <div class="col-lg-1">
+        <div class="col-lg-2">
             <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-danger btn-block" %>
         </div>
     </nav>

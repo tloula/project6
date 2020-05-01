@@ -70,7 +70,7 @@ course0.save!
 course1 = Course.new
 course1.name = "Object-Oriented Design w/ C++"
 course1.designator = "CS-1220"
-course1.description = "OOOOOD - A romantical term"
+course1.description = "Pointers run amuck."
 course1.credits = 3
 course1.save!
 
@@ -84,7 +84,7 @@ course2.save!
 course3 = Course.new
 course3.name = "Web Applications"
 course3.designator = "CS-3220"
-course3.description = "Who won the Medal of Honor at Gettysburg!"
+course3.description = "Oh Hey! That's this class."
 course3.credits = 3
 course3.save!
 
@@ -98,7 +98,7 @@ course4.save!
 course5 = Course.new
 course5.name = "Software Security"
 course5.designator = "CS-4330"
-course5.description = "buffer overflow!"
+course5.description = "Buffer overflow!"
 course5.credits = 3
 course5.save!
 
@@ -154,14 +154,14 @@ course12.save!
 course13 = Course.new
 course13.name = "Digital Logic Design"
 course13.designator = "EGCP-1010"
-course13.description = "Cool course with AND, OR, and NOT"
+course13.description = "Half of the class will die by Thanksgiving."
 course13.credits = 3
 course13.save!
 
 course14 = Course.new
 course14.name = "Advanced Digital Logic Design"
 course14.designator = "EGCP-3010"
-course14.description = "I AM ROBOT"
+course14.description = "Build your own robot!"
 course14.credits = 3
 course14.save!
 
@@ -175,14 +175,14 @@ course15.save!
 course16 = Course.new
 course16.name = "Computer Networks"
 course16.designator = "EGCP-4310"
-course16.description = "Networking is very importing for finding a job!"
+course16.description = "Too many acronyms."
 course16.credits = 3
 course16.save!
 
 course17 = Course.new
 course17.name = "Chemistry"
 course17.designator = "CHEM-1050"
-course17.description = "Bedroom Course!"
+course17.description = "Why did I go to lectures again?"
 course17.credits = 3.5
 course17.save!
 
@@ -203,7 +203,7 @@ course19.save!
 course20 = Course.new
 course20.name = "Physics II"
 course20.designator = "PHYS-2120"
-course20.description = "Why do we take this again?"
+course20.description = "Plug n' Chug"
 course20.credits = 4
 course20.save!
 
@@ -245,16 +245,9 @@ course25.save!
 course26 = Course.new
 course26.name = "Physics I"
 course26.designator = "PHYS-2110"
-course26.description = "velovity and MAGNITUDE?"
+course26.description = "Velocity and Magnitude"
 course26.credits = 4
 course26.save!
-
-course27 = Course.new
-course27.name = "Physical Activy in the Christian Life"
-course27.designator = "IDK-0000"
-course27.description = "Most valuable class of your CU Career they said"
-course27.credits = 3
-course27.save!
 
 # We aren't using requirements
 requirement1 = Requirement.new
@@ -295,7 +288,6 @@ PlanCourse.create(plan_id: plan1.id, course_id: course14.id, term: "Spring", yea
 PlanCourse.create(plan_id: plan1.id, course_id: course16.id, term: "Fall", year: 2020)
 PlanCourse.create(plan_id: plan1.id, course_id: course25.id, term: "Fall", year: 2020)
 PlanCourse.create(plan_id: plan1.id, course_id: course22.id, term: "Spring", year: 2021)
-PlanCourse.create(plan_id: plan1.id, course_id: course27.id, term: "Spring", year: 2021)
 
 # Computer Engineering Requirements
 CourseCategory.create(course_id: course0.id, category_id: category1.id)
@@ -325,7 +317,6 @@ CourseCategory.create(course_id: course22.id, category_id: category1.id)
 CourseCategory.create(course_id: course23.id, category_id: category1.id)
 CourseCategory.create(course_id: course24.id, category_id: category1.id)
 CourseCategory.create(course_id: course25.id, category_id: category2.id)
-CourseCategory.create(course_id: course27.id, category_id: category2.id)
 
 # 2017
 CourseCatalog.create(course_id: course0.id, catalog_id: catalog1.id)
@@ -355,7 +346,6 @@ CourseCatalog.create(course_id: course22.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course23.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course24.id, catalog_id: catalog1.id)
 CourseCatalog.create(course_id: course25.id, catalog_id: catalog1.id)
-CourseCatalog.create(course_id: course27.id, catalog_id: catalog1.id)
 
 # 2018
 CourseCatalog.create(course_id: course0.id, catalog_id: catalog2.id)
