@@ -8,4 +8,4 @@ APE - Academic Planning Environment<br />
 
 HTML5, CSS3, Sass, JavaScript, jQuery, Bootstrap, JSON, jBuilder, Ruby on Rails, PostgreSQL
 
-<a href="https://youtu.be/9-8unV0QiQU" target="_blank"><img src="https://tloula.github.io/images/project-1.png" alt="APE Screenshot" /></a>
+<a href="https://youtu.be/ll7CM2_e6hY" target="_blank"><img src="https://tloula.github.io/images/project-1.png" alt="APE Screenshot" /></a>
