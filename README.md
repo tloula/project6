@@ -1,4 +1,4 @@
-# README
+# Academic Planning Environment
 
 Web Applications<br />
 Final Term Project - Full Stack Web Development<br />
